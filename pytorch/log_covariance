@@ -1,0 +1,91 @@
+==> Preparing data..
+Using graph crop
+Downloading https://www.cs.toronto.edu/~kriz/cifar-10-python.tar.gz to ../data/cifar-10-python.tar.gz
+Failed download. Trying https -> http instead. Downloading http://www.cs.toronto.edu/~kriz/cifar-10-python.tar.gz to ../data/cifar-10-python.tar.gz
+Traceback (most recent call last):
+  File "/home/crosarko/anaconda3/envs/teste/lib/python3.6/site-packages/torchvision-0.2.0-py3.6.egg/torchvision/datasets/utils.py", line 41, in download_url
+    if m.bias:
+  File "/home/crosarko/anaconda3/envs/teste/lib/python3.6/urllib/request.py", line 277, in urlretrieve
+    block = fp.read(bs)
+  File "/home/crosarko/anaconda3/envs/teste/lib/python3.6/http/client.py", line 449, in read
+    n = self.readinto(b)
+  File "/home/crosarko/anaconda3/envs/teste/lib/python3.6/http/client.py", line 493, in readinto
+    n = self.fp.readinto(b)
+  File "/home/crosarko/anaconda3/envs/teste/lib/python3.6/socket.py", line 586, in readinto
+    return self._sock.recv_into(b)
+  File "/home/crosarko/anaconda3/envs/teste/lib/python3.6/ssl.py", line 1009, in recv_into
+    return self.read(nbytes, buffer)
+  File "/home/crosarko/anaconda3/envs/teste/lib/python3.6/ssl.py", line 871, in read
+    return self._sslobj.read(len, buffer)
+  File "/home/crosarko/anaconda3/envs/teste/lib/python3.6/ssl.py", line 631, in read
+    v = self._sslobj.read(len, buffer)
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "cifar.py", line 83, in <module>
+    trainset = torchvision.datasets.CIFAR10(root='../data', train=True, download=True, transform=transform_train)
+  File "/home/crosarko/anaconda3/envs/teste/lib/python3.6/site-packages/torchvision-0.2.0-py3.6.egg/torchvision/datasets/cifar.py", line 59, in __init__
+    else:
+  File "/home/crosarko/anaconda3/envs/teste/lib/python3.6/site-packages/torchvision-0.2.0-py3.6.egg/torchvision/datasets/cifar.py", line 152, in download
+    loss = criterion(outputs, targets)
+  File "/home/crosarko/anaconda3/envs/teste/lib/python3.6/site-packages/torchvision-0.2.0-py3.6.egg/torchvision/datasets/utils.py", line 47, in download_url
+    term_width = int(term_width)
+  File "/home/crosarko/anaconda3/envs/teste/lib/python3.6/urllib/request.py", line 248, in urlretrieve
+    with contextlib.closing(urlopen(url, data)) as fp:
+  File "/home/crosarko/anaconda3/envs/teste/lib/python3.6/urllib/request.py", line 223, in urlopen
+    return opener.open(url, data, timeout)
+  File "/home/crosarko/anaconda3/envs/teste/lib/python3.6/urllib/request.py", line 526, in open
+    response = self._open(req, data)
+  File "/home/crosarko/anaconda3/envs/teste/lib/python3.6/urllib/request.py", line 544, in _open
+    '_open', req)
+  File "/home/crosarko/anaconda3/envs/teste/lib/python3.6/urllib/request.py", line 504, in _call_chain
+    result = func(*args)
+  File "/home/crosarko/anaconda3/envs/teste/lib/python3.6/urllib/request.py", line 1346, in http_open
+    return self.do_open(http.client.HTTPConnection, req)
+  File "/home/crosarko/anaconda3/envs/teste/lib/python3.6/urllib/request.py", line 1318, in do_open
+    encode_chunked=req.has_header('Transfer-encoding'))
+  File "/home/crosarko/anaconda3/envs/teste/lib/python3.6/http/client.py", line 1239, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/home/crosarko/anaconda3/envs/teste/lib/python3.6/http/client.py", line 1285, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/home/crosarko/anaconda3/envs/teste/lib/python3.6/http/client.py", line 1234, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/home/crosarko/anaconda3/envs/teste/lib/python3.6/http/client.py", line 1026, in _send_output
+    self.send(msg)
+  File "/home/crosarko/anaconda3/envs/teste/lib/python3.6/http/client.py", line 964, in send
+    self.connect()
+  File "/home/crosarko/anaconda3/envs/teste/lib/python3.6/http/client.py", line 936, in connect
+    (self.host,self.port), self.timeout, self.source_address)
+  File "/home/crosarko/anaconda3/envs/teste/lib/python3.6/socket.py", line 713, in create_connection
+    sock.connect(sa)
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "cifar.py", line 4, in <module>
+    import torch
+  File "/home/crosarko/anaconda3/envs/teste/lib/python3.6/site-packages/torch/__init__.py", line 37, in <module>
+    import numpy as np
+  File "/home/crosarko/anaconda3/envs/teste/lib/python3.6/site-packages/numpy/__init__.py", line 142, in <module>
+    from . import add_newdocs
+  File "/home/crosarko/anaconda3/envs/teste/lib/python3.6/site-packages/numpy/add_newdocs.py", line 13, in <module>
+    from numpy.lib import add_newdoc
+  File "/home/crosarko/anaconda3/envs/teste/lib/python3.6/site-packages/numpy/lib/__init__.py", line 8, in <module>
+    from .type_check import *
+  File "/home/crosarko/anaconda3/envs/teste/lib/python3.6/site-packages/numpy/lib/type_check.py", line 11, in <module>
+    import numpy.core.numeric as _nx
+  File "/home/crosarko/anaconda3/envs/teste/lib/python3.6/site-packages/numpy/core/__init__.py", line 74, in <module>
+    from numpy.testing.nosetester import _numpy_tester
+  File "/home/crosarko/anaconda3/envs/teste/lib/python3.6/site-packages/numpy/testing/__init__.py", line 12, in <module>
+    from . import decorators as dec
+  File "/home/crosarko/anaconda3/envs/teste/lib/python3.6/site-packages/numpy/testing/decorators.py", line 20, in <module>
+    from .utils import SkipTest, assert_warns
+  File "/home/crosarko/anaconda3/envs/teste/lib/python3.6/site-packages/numpy/testing/utils.py", line 13, in <module>
+    import shutil
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 955, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 665, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 674, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 779, in get_code
+  File "<frozen importlib._bootstrap_external>", line 487, in _compile_bytecode
+KeyboardInterrupt
