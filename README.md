@@ -9,15 +9,15 @@ Matching Convolutional Neural Networks Without Priors About Data
 
 ## Graph Processing
 
-Graph generation and translation searching available in folder graph_processing. Instructions coming soon
+Graph generation and translation searching available in folder graph_processing. Instructions coming soon.
 
 ## CIFAR-10
 
-Code for our method is available, but messy. Instructions for execution, clean code and code for the defferard method coming soon
+Code for our method is available at folder pytorch, but it is messy. Instructions for execution, clean code and code for the defferard method coming soon.
 
 ## PINES/IAPS
 
-Code needs cleaning and will be available soon
+Code needs cleaning and will be available soon.
 
 ## Credits
 
