@@ -32,5 +32,5 @@ Carlos Eduardo Rosar Kos Lassance, Jean-Charles Vialatte, Vincent Gripon and Nic
 
 Baseline for cifar10 - PreActResNet18: https://github.com/kuangliu/pytorch-cifar
 
-Code for the Defferard method: https://github.com/xbresson/graph_convnets_pytorch 
+Base code for the Defferard method: https://github.com/xbresson/graph_convnets_pytorch 
 
