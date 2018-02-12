@@ -5,6 +5,7 @@ Matching Convolutional Neural Networks Without Priors About Data
 ## Paper
 
 [short version under review at ICLR 2018 Workshop](https://openreview.net/forum?id=SJ9e4HJPM)
+
 [long version (coming soon)](https://)
 
 ## Graph Processing
@@ -18,6 +19,12 @@ Code for our method is available at folder pytorch, but it is messy. Instruction
 ## PINES/IAPS
 
 Code needs cleaning and will be available soon.
+
+Architecture (CNN, Defferard and Proposed): Input Layer -> Dropout (0.1) -> Conv(1->64) -> Conv(64->128) -> Dropout(0.1) -> Linear(128*369 -> 2)
+
+## Visualizations
+
+Coming soon
 
 ## Credits
 
