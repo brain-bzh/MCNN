@@ -176,10 +176,42 @@ class ChebPreActResNet(nn.Module):
         out = self.linear(out)
         return out
 
+class SmallChebNet(nn.Module):
+    def __init__(self, L_list, K_list, num_classes=2):
+        super(SmallChebNet, self).__init__()
+        self.L_list = L_list
+        self.K_list = K_list
+
+        self.conv1 = ChebConv(1, 64, L_list[0], K_list[0], bias=False)
+        self.conv2 = ChebConv(64, 128, L_list[0], K_list[0], bias=False)
+        self.dropout1 = nn.Dropout(0.1) 
+        self.dropout2 = nn.Dropout(0.1) 
+        self.linear = nn.Linear(128*369, num_classes)
+
+    def forward(self, x):
+        x = x.view(-1,1,369)
+        x = self.dropout1(x)
+        x = self.conv1(x)
+        x = F.relu(x)
+        x = self.conv2(x)
+        x = F.relu(x)
+        x = self.dropout2(x)
+        x = x.view(-1,128*369)
+        x = self.linear(x)
+
+        return x
+
+
 def ChebPreActResNet18(K=25):
     L_list, perm = build_grid_graph(4)
     K_list = [K]*len(L_list)
     return perm, ChebPreActResNet(ChebPreActBlock, [2,2,2,2], L_list, K_list)
+
+def MiniChebNet(K=25):
+    L_list, perm = read_graph("/home/crosarko/article-invite/graph_processing/ocaml/iaps-radius-small")
+    K_list = [K]*len(L_list)
+    return perm, SmallChebNet(L_list, K_list)
+
 
 def ChebPreActResNet34(K=25):
     L_list, perm = build_grid_graph(4)
@@ -202,6 +234,38 @@ def build_grid_graph(coarsening_levels=4):
     print('lmax: ' + str([lmax[i] for i in range(coarsening_levels)]))
 
     return L_list, perm
+
+def read_graph_aux(filename):
+    f = open(filename,"r")
+    lines = f.readlines()
+    for index,line in enumerate(lines):
+        if index == 0:
+            N = int(line)
+            A = np.zeros((N,N))
+            print(line)
+        else:
+            splitted = line.replace("\n","").split(" ")
+            for value in splitted:
+                value = int(value)
+                A[index-1,value] = 1
+    from scipy import sparse
+    A = sparse.csr_matrix(A)
+    return A
+
+def read_graph(filename,coarsening_levels=0):
+    A = read_graph_aux(filename)
+
+    # Compute coarsened graphs
+    L_list, perm = coarsen(A, coarsening_levels)
+
+    # Compute max eigenvalue of graph Laplacians
+    lmax = []
+    for i in range(coarsening_levels):
+        lmax.append(lmax_L(L_list[i]))
+    print('lmax: ' + str([lmax[i] for i in range(coarsening_levels)]))
+
+    return L_list, perm
+    
 
 def reorder(perm, train_data, test_data, val_data=None):
     if perm is None:

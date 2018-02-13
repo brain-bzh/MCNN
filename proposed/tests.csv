@@ -1,0 +1,41 @@
+,type,last_acc
+0,{'kernel_size': 1},84.46
+1,{'translations_path': 'translations/translations_1_1_1_radius_small.pkl'},85.25
+2,{'kernel_size': 1},85.35
+3,{'translations_path': 'translations/translations_1_1_1_radius_small.pkl'},84.06
+4,{'kernel_size': 1},83.37
+5,{'translations_path': 'translations/translations_1_1_1_radius_small.pkl'},85.25
+6,{'kernel_size': 1},84.85
+7,{'translations_path': 'translations/translations_1_1_1_radius_small.pkl'},84.46
+8,{'kernel_size': 1},83.86
+9,{'translations_path': 'translations/translations_1_1_1_radius_small.pkl'},85.74
+10,{'kernel_size': 1},83.76
+11,{'translations_path': 'translations/translations_1_1_1_radius_small.pkl'},85.15
+12,{'kernel_size': 1},82.38
+13,{'translations_path': 'translations/translations_1_1_1_radius_small.pkl'},85.05
+14,{'kernel_size': 1},84.46
+15,{'translations_path': 'translations/translations_1_1_1_radius_small.pkl'},85.15
+16,{'kernel_size': 1},85.74
+17,{'translations_path': 'translations/translations_1_1_1_radius_small.pkl'},85.84
+18,{'kernel_size': 1},84.85
+19,{'translations_path': 'translations/translations_1_1_1_radius_small.pkl'},84.85
+20,linear,82.92
+21,linear,81.62
+22,linear,81.74
+23,linear,83.69
+24,linear,83.16
+25,linear,82.51
+26,linear,83.63
+27,linear,81.56
+28,linear,82.98
+29,linear,82.45
+30,defferard,82.16
+31,defferard,82.94
+32,defferard,83.14
+33,defferard,82.95
+34,defferard,83.84
+35,defferard,82.86
+36,defferard,83.14
+37,defferard,81.36
+38,defferard,82.94
+39,defferard,82.65
