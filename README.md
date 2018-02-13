@@ -90,13 +90,9 @@ optional arguments:
 
 ## PINES/IAPS
 
-Code needs cleaning and will be available soon.
-
 Architecture (CNN, Defferard and Proposed): Input Layer -> Dropout (0.1) -> Conv(1->64) -> Conv(64->128) -> Dropout(0.1) -> Linear(128*369 -> 2)
 
-## Visualizations
-
-Coming soon
+Experiments can be made by running the pines_test.py script in proposed and defferard folders. A script for generating the means is available at pines_summary.py.
 
 ## Credits
 
