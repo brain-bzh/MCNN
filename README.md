@@ -8,13 +8,19 @@ Matching Convolutional Neural Networks Without Priors About Data
 
 [long version (coming soon)](https://)
 
+## Dependencies
+
+We recommend the users to use a [anaconda](https://www.anaconda.com) environment to run the experiments. This environment can be created using:
+
+~~~
+conda env create -n environment_name -f environment.yml
+~~~ 
+
 ## Graph Processing
 
 Graph generation and translation searching available in folder graph_processing. Instructions coming soon.
 
 ## CIFAR-10
-
-All code is available at the pytorch folder.
 
 ### Architecture
 
@@ -23,24 +29,29 @@ We train all our models in [PreActResNet18](https://arxiv.org/abs/1603.05027). T
 The models are trained during 50 epochs with a learning rate of 0.1 and then trained for 50 more epochs with a learning rate of 0.001. An example of training our proposed method using our proposed data augmentation is:
 
 ~~~
+cd proposed
 python cifar.py -g -d &> log_covariance
 python cifar.py -g -d --resume --lr 0.001 &>> log_covariance
 ~~~
 
- Further details can be seen in the source file under pytorch/models/preact_resnet.py
+Further details about the model can be seen in the source files proposed/graph.py and defferard/models/
 
 ### Usage for training the proposed method and classical cnns
+
 ~~~~
-usage: pytorch/cifar.py [-h] [--lr LR] [--epochs EPOCHS] [--resume] [--flip] [--no_da]
-                [--graph_data_aug] [--graph_convolution] [--name NAME]
-                [--translations_crop TRANSLATIONS_CROP]
+cd proposed
+python cifar.py --help
+usage: cifar.py [-h] [--lr LR] [--batch BATCH] [--epochs EPOCHS] [--resume]
+                [--flip] [--no_da] [--graph_data_aug] [--graph_convolution]
+                [--name NAME] [--translations_crop TRANSLATIONS_CROP]
                 [--translations_conv TRANSLATIONS_CONV]
 
-PyTorch CIFAR10 Training
+CIFAR10 CNN and Graph Translation Training
 
 optional arguments:
   -h, --help            show this help message and exit
   --lr LR               learning rate
+  --batch BATCH         batch size
   --epochs EPOCHS       epochs to train
   --resume, -r          resume from checkpoint
   --flip, -f            use flips for conventional data augmentation
@@ -54,11 +65,28 @@ optional arguments:
                         path to the translations for the crop
   --translations_conv TRANSLATIONS_CONV
                         path to the translations for the convolutions
+
 ~~~~
 
 ### Usage for training the Defferard method
+~~~
+cd defferard
+python cifar.py --help
+usage: cifar.py [-h] [--lr LR] [--batch BATCH] [--epochs EPOCHS] [--clip CLIP]
+                [--k K] [--resume] [--flip]
 
+CIFAR10 Defferard Training
 
+optional arguments:
+  -h, --help       show this help message and exit
+  --lr LR          learning rate
+  --batch BATCH    batch size
+  --epochs EPOCHS  epochs to train
+  --clip CLIP      gradient clipping value
+  --k K            polynomial orders
+  --resume, -r     resume from checkpoint
+  --flip, -f       use flips for data augmentation
+~~~
 
 ## PINES/IAPS
 
