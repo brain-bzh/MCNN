@@ -18,7 +18,7 @@ conda env create -n environment_name -f environment.yml
 
 ## Graph Processing
 
-Graph generation and translation searching available in folder graph_processing. Instructions coming soon.
+Graph generation and translation searching available in folder graph_processing. A python version is available for generating the graphs and translations. If the python version takes too long to find the translations you can try the ocaml version of the program that is quicker, but does not generate the strides.
 
 ## CIFAR-10
 
